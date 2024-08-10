@@ -18,7 +18,7 @@
             }
 
             .cardBox {
-                background-image: linear-gradient(to bottom right, hsl(213, 19%, 18%), hsl(213, 19%, 20%));
+                background-image: linear-gradient(to bottom right, hsl(213, 19%, 18%, 0.5), hsl(216, 12%, 8%));
                 border-radius: 20px;
                 box-shadow: 0 10px 30px -20px hsl(0, 0%, 0%);
                 margin: 170px 0;
@@ -38,9 +38,59 @@
                 justify-content: start;
             }
 
-            .cardBoxResult {
+            .cardBoxRatingScala {
+                align-items: center;
+                display: grid;
+                grid-template-columns: repeat(5,1fr);
+                justify-content: center;
+                margin: 4px 0;
+                width: 100%;
+            }
+
+            .cardBoxRatingScalaContainer {
                 align-items: center;
                 display: flex;
+                justify-content: center;
+                width: 100%;
+            }
+
+            .cardBoxRatingScalaPoint {
+                align-self: center;
+                background-color: hsl(213, 19%, 18%);
+                border-radius: 50px;
+                box-shadow: 0 0 30px -15px hsl(216, 12%, 8%);
+                color: hsl(217, 12%, 63%);
+                padding: 20px 24px;
+
+                @media (max-width: 450px) {
+                    padding: 10px 15px;
+                }
+            }
+
+            .cardBoxRatingScalaPoint:hover {
+                background-color: hsl(25, 97%, 53%);
+                color: hsl(216, 12%, 8%);
+            }
+
+            .cardBoxRatingScalaPoint:focus {
+                background-color: hsl(25, 97%, 53%);
+                color: hsl(216, 12%, 8%);
+                outline: none;
+            }
+
+            .cardBoxRatingStar {
+                align-self: center;
+                background-color: hsl(213, 19%, 18%);
+                border: 5px;
+                border-radius: 50px;
+                box-shadow: 0 0 30px -15px hsl(216, 12%, 8%);
+                padding: 20px;
+            }
+
+            .cardBoxResult {
+                align-items: center;
+                //display: flex;
+                display: none;
                 flex-direction: column;
                 justify-content: center;
             }
@@ -62,34 +112,6 @@
                 height: auto;
             }
 
-            .cardBoxScalaPoint {
-                background-color: hsl(213, 19%, 18%);
-                border-radius: 50px;
-                box-shadow: 0 0 30px -15px hsl(216, 12%, 8%);
-                color: hsl(217, 12%, 63%);
-                max-width: 20%;
-            }
-
-            .cardBoxScalaPoint:hover {
-                background-color: hsl(25, 97%, 53%);
-            }
-
-            //Placeholder for js selected
-            .cardBoxScalaPoint:focus {
-                background-color: hsl(0, 0%, 100%);
-            }
-
-            .cardBoxRatingStar {
-                background-color: hsl(213, 19%, 18%);
-                border-radius: 50px;
-                box-shadow: 0 0 30px -15px hsl(216, 12%, 8%);
-                padding-right: 16px;
-            }
-
-            .cardBoxRatingStar:last-child {
-                padding-right: 0;
-            }
-
             * {
                 box-sizing: border-box;
             }
@@ -106,16 +128,24 @@
 
             button {
                 background-color: hsl(25, 97%, 53%);
+                border: 0;
                 border-radius: 50px;
                 box-shadow: 0 0 30px -15px hsl(216, 12%, 8%);
                 color: hsl(216, 12%, 8%);
                 font-weight: bold;
+                margin-top: 24px;
+                padding: 12px 0;
                 width: 100%;
                 text-transform: uppercase;
             }
 
             button:hover {
-                background-color: hsl(0, 0%, 100%);;
+                background-color: hsl(0, 0%, 100%);
+            }
+
+            button:focus {
+                background-color: hsl(0, 0%, 100%);
+                outline: none;
             }
 
             h1 {
@@ -125,6 +155,7 @@
             p {
                 color: hsl(217, 12%, 63%);
                 line-height: 150%;
+                text-align: start;
             }
         </style>
     </head>
@@ -138,14 +169,24 @@
                         <p>Please let us know how we did with your support request. All feedback is appreciated
                             to help us improve our offering!</p>
                     </header>
-                    <div class="cardBoxScala">
-                        <label class="cardBoxScalaPoint">1</label>
-                        <label class="cardBoxScalaPoint">2</label>
-                        <label class="cardBoxScalaPoint">3</label>
-                        <label class="cardBoxScalaPoint">4</label>
-                        <label class="cardBoxScalaPoint">5</label>
+                    <div class="cardBoxRatingScala">
+                        <div class="cardBoxRatingScalaContainer">
+                            <label class="cardBoxRatingScalaPoint" tabindex="1">1</label>
+                        </div>
+                        <div class="cardBoxRatingScalaContainer">
+                            <label class="cardBoxRatingScalaPoint" tabindex="2">2</label>
+                        </div>
+                        <div class="cardBoxRatingScalaContainer">
+                            <label class="cardBoxRatingScalaPoint" tabindex="3">3</label>
+                        </div>
+                        <div class="cardBoxRatingScalaContainer">
+                            <label class="cardBoxRatingScalaPoint" tabindex="4">4</label>
+                        </div>
+                        <div class="cardBoxRatingScalaContainer">
+                            <label class="cardBoxRatingScalaPoint" tabindex="5">5</label>
+                        </div>
                     </div>
-                    <button>Submit</button>
+                    <button tabindex="6">Submit</button>
                 </div>
                 <div class="cardBoxResult">
                     <img class="cardBoxResultImage" src="images/illustration-thank-you.svg" alt="thank you illustration">
