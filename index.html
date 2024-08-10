@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+        <link rel="stylesheet" href="https://fonts.google.com/specimen/Overpass">
         <title>kephalosk | Interactive Rating Component</title>
         <style>
             .attribution {
@@ -15,6 +16,116 @@
             .attribution a {
                 color: hsl(228, 45%, 64%);
             }
+
+            .cardBox {
+                background-image: linear-gradient(to bottom right, hsl(213, 19%, 18%), hsl(213, 19%, 20%));
+                border-radius: 20px;
+                box-shadow: 0 10px 30px -20px hsl(0, 0%, 0%);
+                margin: 170px 0;
+                max-width: 412px;
+                padding: 32px;
+                width: 100%;
+
+                @media (max-width: 450px) {
+                    margin: 125px 0;
+                }
+            }
+
+            .cardBoxRating {
+                align-items: start;
+                display: flex;
+                flex-direction: column;
+                justify-content: start;
+            }
+
+            .cardBoxResult {
+                align-items: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+
+            .cardBoxResult h1, p {
+                text-align: center;
+            }
+
+            .cardBoxResult label {
+                background-color: hsl(213, 19%, 18%);
+                border-radius: 50px;
+                box-shadow: 0 0 30px -15px hsl(216, 12%, 8%);
+                color: hsl(25, 97%, 53%);
+                width: 160px;
+            }
+
+            .cardBoxResultImage {
+                width: 160px;
+                height: auto;
+            }
+
+            .cardBoxScalaPoint {
+                background-color: hsl(213, 19%, 18%);
+                border-radius: 50px;
+                box-shadow: 0 0 30px -15px hsl(216, 12%, 8%);
+                color: hsl(217, 12%, 63%);
+                max-width: 20%;
+            }
+
+            .cardBoxScalaPoint:hover {
+                background-color: hsl(25, 97%, 53%);
+            }
+
+            //Placeholder for js selected
+            .cardBoxScalaPoint:focus {
+                background-color: hsl(0, 0%, 100%);
+            }
+
+            .cardBoxRatingStar {
+                background-color: hsl(213, 19%, 18%);
+                border-radius: 50px;
+                box-shadow: 0 0 30px -15px hsl(216, 12%, 8%);
+                padding-right: 16px;
+            }
+
+            .cardBoxRatingStar:last-child {
+                padding-right: 0;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                align-items: center;
+                background-color: hsl(216, 12%, 8%);
+                display: flex;
+                flex-direction: column;
+                font-family: Overpass,sans-serif;
+                justify-content: center;
+                margin: 24px;
+            }
+
+            button {
+                background-color: hsl(25, 97%, 53%);
+                border-radius: 50px;
+                box-shadow: 0 0 30px -15px hsl(216, 12%, 8%);
+                color: hsl(216, 12%, 8%);
+                font-weight: bold;
+                width: 100%;
+                text-transform: uppercase;
+            }
+
+            button:hover {
+                background-color: hsl(0, 0%, 100%);;
+            }
+
+            h1 {
+                color: hsl(0, 0%, 100%);
+            }
+
+            p {
+                color: hsl(217, 12%, 63%);
+                line-height: 150%;
+            }
         </style>
     </head>
     <body>
@@ -22,7 +133,7 @@
             <div class="cardBox">
                 <div class="cardBoxRating">
                     <header>
-                        <img src="images/icon-star.svg" alt="star icon">
+                        <img class="cardBoxRatingStar" src="images/icon-star.svg" alt="star icon">
                         <h1>How did we do?</h1>
                         <p>Please let us know how we did with your support request. All feedback is appreciated
                             to help us improve our offering!</p>
@@ -37,7 +148,7 @@
                     <button>Submit</button>
                 </div>
                 <div class="cardBoxResult">
-                    <img src="images/illustration-thank-you.svg" alt="thank you illustration">
+                    <img class="cardBoxResultImage" src="images/illustration-thank-you.svg" alt="thank you illustration">
                     <label>You selected <span class="cardBoxResultScore"></span> out of 5</label>
                     <h1>Thank you!</h1>
                     <p>We appreciate you taking the time to give a rating. If you ever need more support,
