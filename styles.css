@@ -25,7 +25,6 @@
 .cardBoxRating {
     align-items: start;
     display: flex;
-//display: none;
     flex-direction: column;
     justify-content: start;
 }
@@ -85,7 +84,6 @@
 
 .cardBoxResult {
     align-items: center;
-//display: flex;
     display: none;
     flex-direction: column;
     justify-content: center;
