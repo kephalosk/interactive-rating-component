@@ -33,7 +33,8 @@
 
             .cardBoxRating {
                 align-items: start;
-                display: flex;
+                //display: flex;
+                display: none;
                 flex-direction: column;
                 justify-content: start;
             }
@@ -89,14 +90,14 @@
 
             .cardBoxResult {
                 align-items: center;
-                //display: flex;
-                display: none;
+                display: flex;
+                //display: none;
                 flex-direction: column;
                 justify-content: center;
             }
 
-            .cardBoxResult h1, p {
-                text-align: center;
+            .cardBoxResult h1 {
+                margin-bottom: 0;
             }
 
             .cardBoxResult label {
@@ -104,12 +105,17 @@
                 border-radius: 50px;
                 box-shadow: 0 0 30px -15px hsl(216, 12%, 8%);
                 color: hsl(25, 97%, 53%);
-                width: 160px;
+                padding: 4px 12px;
+            }
+
+            .cardBoxResult p {
+                text-align: center;
             }
 
             .cardBoxResultImage {
                 width: 160px;
                 height: auto;
+                margin-bottom: 24px;
             }
 
             * {
